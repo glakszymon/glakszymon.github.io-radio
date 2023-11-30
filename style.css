@@ -174,8 +174,8 @@ header{
 }
 .visualizer {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     background: #fff;
     transition: .5s;
@@ -214,12 +214,25 @@ header{
     left: 50%;
     transform: translate(-50%, -50%);
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
-    border-top: 40px solid #fff;
-    border-right: 20px solid transparent;
-    border-left: 20px solid transparent;
+    border-top: 30px solid #fff;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
     transform-origin: top left;
     transition: .25s;
 }
+
+
+.audio_player{
+    background-color: #5f5;
+    width: 15rem;
+    height: 23rem;
+    border: solid black 0.5rem;
+    border-radius: 1rem;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+}
+
