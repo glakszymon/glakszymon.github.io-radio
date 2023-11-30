@@ -38,7 +38,7 @@ const btn = document.querySelector('.btn');
             for (let i = 0; i < bufferLength; i++) {
                 let item = dataArray[i];
                 item = item > 150 ? item / 1.5 : item * 1.5;
-                elements[i].style.transform = `rotateZ(${i * (360 / bufferLength)}deg) translate(-50%, ${clamp(item, 100, 150)}px)`;
+                elements[i].style.transform = `rotateZ(${i * (360 / bufferLength)}deg) translate(-50%, ${clamp(item, 50, 100)}px)`;
             }
         };
         update();
