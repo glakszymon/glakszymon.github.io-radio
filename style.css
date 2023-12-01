@@ -168,14 +168,14 @@ header{
 
 /* ---------------------------------------------------------- */
 
-.sticky_player{
+.audio_player{
     position: sticky;
-    /* top: 1rem;
+    top: 1rem;
     z-index: 10;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     margin-top: 1rem;
-    margin-bottom: 6rem; */
+    margin-bottom: 6rem;
 }
 
 /* 88888888888888888888888888888888888888888888888 */
