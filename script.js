@@ -369,14 +369,16 @@
        ${this.style()}
         <figure class="audio-player">
           <figcaption class="audio-name"></figcaption>
-          <audio style="display: none"></audio>
-          <button class="play-btn" type="button">play</button>
-          <div class="progress-indicator">
-              <span class="duration">0:00</span>
-              <canvas class="visualizer" style="width: 100%; height: 70px"></canvas>
-          </div>
-          <div class="volume-bar">
-              <input type="range" min="0" max="2" step="0.01" value="${this.volume}" class="volume-field">
+          <div class="sticky_player">
+            <audio style="display: none"></audio>
+            <button class="play-btn" type="button">play</button>
+            <div class="progress-indicator">
+                <span class="duration">0:00</span>
+                <canvas class="visualizer" style="width: 100%; height: 70px"></canvas>
+            </div>
+            <div class="volume-bar">
+                <input type="range" min="0" max="2" step="0.01" value="${this.volume}" class="volume-field">
+            </div>
           </div>
         </figure>
       `;
