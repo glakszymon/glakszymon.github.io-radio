@@ -6,6 +6,7 @@
     outline: none;
     border: none;
     box-sizing: border-box;
+    color: #DFF6FF;
 }
 
 img{
@@ -19,7 +20,7 @@ a{
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: #303841;
+    background-color: #06283D;
 }
 
 nav{
@@ -33,7 +34,7 @@ nav{
 }
 
 .nav_logo{
-    max-width: 90px;
+    max-width: 100px;
 
 }
 
@@ -47,7 +48,7 @@ nav{
 .link a{
     position: relative;
     padding-bottom: 0.75rem;
-    color: #fff;
+    color: #DFF6FF;
 }
 
 .link a::after{
@@ -57,7 +58,7 @@ nav{
     width: 0;
     bottom: 0;
     left: 0;
-    background-color: #00ADB5;
+    background-color:  #A9DCFF;
     transition: all 0.3s ease;
 }
 
@@ -68,15 +69,15 @@ nav{
 .btn{
     padding: 1rem 2rem;
     font-size: 1rem;
-    color: #fff;
-    background-color: #00ADB5;
+    color: #DFF6FF;
+    background-color:  #A9DCFF;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .btn:hover{
-    background-color: #029097;
+    background-color: #1363DF;
 
 }
 
@@ -88,7 +89,7 @@ nav{
 
 .blur{
     position: absolute;
-    box-shadow: 0 0 1000px 50px #00ADB5;
+    box-shadow: 0 0 1000px 50px #A9DCFF;
     z-index: -100;
 }
 
@@ -136,7 +137,7 @@ header{
 }
 
 .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.1) .2s;
     position: relative;
     z-index: 2;
     

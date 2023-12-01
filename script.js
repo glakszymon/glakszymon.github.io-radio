@@ -248,7 +248,7 @@
           background: #111;
           border-radius: 5px;
           padding: 5px;
-          color: #fff;
+          color: #DFF6FF;
           display: flex;
           align-items: center;
           position: relative;
@@ -257,7 +257,7 @@
         
         .audio-name {
              position: absolute;
-            color: #fff;
+            color: #DFF6FF;
             padding: 5px 10px;
             font-size: 12px;
             width: 100%;
