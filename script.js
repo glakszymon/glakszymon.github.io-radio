@@ -350,7 +350,7 @@
             flex: 1;
             font-size: 12px;
             align-items: center;
-            height: 20px;
+            height: 75px;
         }
         
         canvas {
@@ -373,7 +373,7 @@
           <button class="play-btn" type="button">play</button>
           <div class="progress-indicator">
               <span class="duration">0:00</span>
-              <canvas class="visualizer" style="width: 100%; height: 20px"></canvas>
+              <canvas class="visualizer" style="width: 100%; height: 70px"></canvas>
           </div>
           <div class="volume-bar">
               <input type="range" min="0" max="2" step="0.01" value="${this.volume}" class="volume-field">

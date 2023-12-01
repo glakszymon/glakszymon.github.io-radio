@@ -121,6 +121,7 @@ header{
     margin: 0.2rem;
     transition: .2s; */
     
+    box-shadow: 0 7px 20px 5px #00000088;
     margin: 0.4rem;
     width: 13rem;
     height: 20rem;
@@ -128,7 +129,6 @@ header{
     max-width: 300px;
     border: 1px solid #ffffff22;
     background: linear-gradient(0deg, #5d6168 0%, rgba(17, 0, 32, 0.5) 100%);
-    box-shadow: 0 7px 20px 5px #00000088;
     border-radius: 0.7rem;
     backdrop-filter: blur(7px);
     overflow: hidden;
@@ -136,9 +136,11 @@ header{
 }
 
 .card:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     position: relative;
     z-index: 2;
+    
+    box-shadow: 0 7px 20px 5px #00000088;
 }
 
 .people{
@@ -173,4 +175,11 @@ header{
     margin-right: 1.5rem;
     margin-top: 1rem;
     margin-bottom: 6rem;
+}
+
+/* 88888888888888888888888888888888888888888888888 */
+.wypelniacz{
+    width: 200px;
+    height: 5000px;
+    background-color: #fff;
 }
