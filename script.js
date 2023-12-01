@@ -125,7 +125,7 @@
         // flip the height so the bar is drawn from the bottom
         const y = this.canvas.height - barHeight;
         
-        this.canvasCtx.fillStyle = `rgba(${frequency}, 255, 100)`;
+        this.canvasCtx.fillStyle = `rgba(${frequency}, 181, 255)`;
         this.canvasCtx.fillRect(x, y, this.barWidth, barHeight);
         
         x += (this.barWidth + this.barGap);
