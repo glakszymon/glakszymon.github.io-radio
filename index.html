@@ -2,17 +2,22 @@
 <html lang="pl">
     <head>
         <meta charset="utf-8">
-        <title>Radio staszic</title>
-        <link rel="shortcut icon" type="image/jpg" href="images/radio.png"/>
+        <title>Stasie Radio</title>
+        <link rel="shortcut icon" type="image/jpg" href="./images/logo.png"/>
         <link rel="stylesheet" href="style.css">
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="script.js"></script>
     </head>
     
+    <div class="inBuild">
+        <img src="./images/warning.png" class="iconWarning">
+        <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
+        <img src="./images/warning.png" class="iconWarning">
+    </div>
     <nav>
         <div class="nav_logo">
             <a href="#">
-                <img src="images/logo.png">
+                <img src="./images/logo.png">
             </a>
         </div>
         
@@ -26,7 +31,7 @@
 
     
     <header class="container">
-        <div class="content">
+            <div class="content">
             <span class="blur"></span>
             <span class="blur"></span>
             <h4>CREATE YOUR SITE LIKE PRO</h4>
@@ -67,8 +72,8 @@
     </body>
     
     
-    <div class="wypelniacz">
-    </div>
+    <!-- <div class="wypelniacz">
+    </div> -->
 
 
     <script>
@@ -122,6 +127,7 @@
             }
             
         });
+        
         app.mount("#listOfPeople");
 
     </script>

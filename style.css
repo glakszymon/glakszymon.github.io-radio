@@ -184,3 +184,25 @@ header{
     height: 5000px;
     background-color: #fff;
 }
+
+.inBuild
+{
+    display: flex;
+    background-color: #ffff0087;
+    border-bottom: 0.3rem solid #ffffff87;
+}
+
+.iconWarning{
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+    /* padding-top: 0.2rem;
+    padding-bottom: 0.2rem; */
+}
+
+.error_text{
+    margin: auto;
+  font-style: italic;
+  font-size: larger;
+  padding: 0.6rem;
+}
