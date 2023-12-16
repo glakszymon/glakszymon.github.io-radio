@@ -172,10 +172,10 @@ header{
     position: sticky;
     top: 1rem;
     z-index: 10;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 1rem;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 }
 
 /* 88888888888888888888888888888888888888888888888 */
@@ -205,4 +205,65 @@ header{
   font-style: italic;
   font-size: larger;
   padding: 0.6rem;
+}
+/* ------------------- FOOTER ------------------- */
+.buttonInsta{
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #00000031;
+    /* height: auto; */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+.logoFooter{
+    width: 6rem;
+    height: 6rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2rem;
+}
+
+.oficial{
+    /* background-color: red; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.kontatkWartosc{
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+}
+
+.kontaktList{
+    list-style-type: none;
+}
+
+.kontaktyIcon{
+    width: 1rem;
+    height: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0.5rem;
+}
+
+.mediaButtons{
+    display: flex;
+}
+
+.media{
+    margin-top: auto;
+    margin-bottom: auto;
 }

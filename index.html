@@ -8,74 +8,118 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="script.js"></script>
     </head>
-    
-    <div class="inBuild">
-        <img src="./images/warning.png" class="iconWarning">
-        <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
-        <img src="./images/warning.png" class="iconWarning">
-    </div>
-    <nav>
-        <div class="nav_logo">
-            <a href="#">
-                <img src="./images/logo.png">
-            </a>
+    <body>    
+        <div class="inBuild">
+            <img src="./images/warning.png" class="iconWarning">
+            <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
+            <img src="./images/warning.png" class="iconWarning">
         </div>
+        <nav>
+            <div class="nav_logo">
+                <a href="#">
+                    <img src="./images/logo.png">
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="link"><a href="#">Info</a></li>
+                <li class="link"><a href="#">Program</a></li>
+                <li class="link"><a href="#">Muzyka</a></li>
+                <li class="link"><a href="#">Redaktorzy</a></li>
+            </ul>
+        </nav>
         
-        <ul class="nav-links">
-            <li class="link"><a href="#">Info</a></li>
-            <li class="link"><a href="#">Program</a></li>
-            <li class="link"><a href="#">Muzyka</a></li>
-            <li class="link"><a href="#">Redaktorzy</a></li>
-        </ul>
-    </nav>
-
-    
-    <header class="container">
+        
+        <header class="container">
             <div class="content">
-            <span class="blur"></span>
-            <span class="blur"></span>
-            <h4>CREATE YOUR SITE LIKE PRO</h4>
-            <H1>Hi, I'm <span>Simon</span>, programer</H1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </div>
-        <div class="image">
-            <img src="images/header.png">
-        </div>
-    </header>
-    
-    <div class="audio_player">
-        <audio-player title="My cool super long named audio sound"
-            src="song/song.mp3"
-            bar-width="5"
-            bar-gap="2"
-            preload autoplay
-        ></audio-player>
-    </div>
-    
-    <body class="container">
+                <span class="blur"></span>
+                <span class="blur"></span>
+                <h4>CREATE YOUR SITE LIKE PRO</h4>
+                <H1>Hi, I'm <span>Simon</span>, programer</H1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="image">
+                <img src="images/header.png">
+            </div>
+        </header>
         
+        <div class="container">
+            <div class="audio_player">
+                <audio-player title="My cool super long named audio sound"
+                src="song/song.mp3"
+                bar-width="5"
+                bar-gap="2"
+                preload autoplay
+                ></audio-player>
+            </div>
+        </div>
+        
+        
+        <div class="container">
         <!-- <div class="people" id="listOfPeople">
-            <li v-for="item in people" style="list-style: none;">
-                <div class="card">
-                    <img :src="item.photo" class="picture">
-                    <p class="name">{{ item.name }}</p>
-                    <p class="opis">{{item.opis}}</p>
-                </div>
-            </li>
+                <li v-for="item in people" style="list-style: none;">
+                    <div class="card">
+                        <img :src="item.photo" class="picture">
+                        <p class="name">{{ item.name }}</p>
+                        <p class="opis">{{item.opis}}</p>
+                    </div>
+                </li>
+            </div> -->
+            
+            
+        </div>
+        
+        
+        <!-- <div class="wypelniacz">
         </div> -->
         
+        <footer class="kontakt">
+            <div class="container" >
+                <div class="grid-container">
+                    <!-- <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>  
+                    <div>7</div>
+                    <div>8</div> -->
+                <img class="logoFooter" src="./images/logo.png">
+                <div class="oficial">
+                    <p style="font-weight: bold;">Kontakty:</p>
+                    <ul class="kontaktList">
+                        <li class="kontatkWartosc">
+                            <div style="display: flex;">
+                                <image src="./images/gmail.png" class="kontaktyIcon"></image>
+                                <p>Mail:</p>
+                            </div>
+                            <p style="margin-left: 0.5rem;">radio@gmail.com</p>
+                        </li>
+                        <li class="kontatkWartosc">
+                            <div style="display: flex;">
+                                <image src="./images/phone-call.png" class="kontaktyIcon"></image>
+                                <p>Telefon:</p>
+                            </div>
+                            <p style="margin-left: 0.5rem;">519 083 221</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="media">
+                    <p style="font-weight: bold;">Media:</p>
+                    <div class="mediaButtons">
+                        <button class="buttonInsta" href="https://www.instagram.com/stasie_radio/"><img src="./images/instagram.png"></button>
+                        <button class="buttonInsta" href="https://www.instagram.com/stasie_radio/"><img src="./images/chat-bubble.png"></button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </footer>
     </body>
-    
-    
-    <!-- <div class="wypelniacz">
-    </div> -->
-
-
     <script>
         let app = Vue.createApp({
             el: '#listOfPeople',
