@@ -47,7 +47,7 @@
         ></audio-player>
     </div>
     
-    <body class="container">
+    <div class="container">
         
         <!-- <div class="people" id="listOfPeople">
             <li v-for="item in people" style="list-style: none;">
@@ -59,7 +59,7 @@
             </li>
         </div> -->
         
-    </body>
+    </div>
 </template>
 
 <style>
