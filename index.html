@@ -9,17 +9,74 @@
         <script src="script.js"></script>
     </head>
     
+    <div class="inBuild">
+        <img src="./images/warning.png" class="iconWarning">
+        <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
+        <img src="./images/warning.png" class="iconWarning">
+    </div>
+    <nav>
+        <div class="nav_logo">
+            <a href="#">
+                <img src="./images/logo.png">
+            </a>
+        </div>
+        
+        <ul class="nav-links">
+            <li class="link"><a href="#">Info</a></li>
+            <li class="link"><a href="#">Program</a></li>
+            <li class="link"><a href="#">Muzyka</a></li>
+            <li class="link"><a href="#">Redaktorzy</a></li>
+        </ul>
+    </nav>
 
-    <body>
-        <div id="app"></div>
-        <script type="module" src="./site/index.js"></script>
+    
+    <header class="container">
+            <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h4>CREATE YOUR SITE LIKE PRO</h4>
+            <H1>Hi, I'm <span>Simon</span>, programer</H1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div class="image">
+            <img src="images/header.png">
+        </div>
+    </header>
+    
+    <div class="audio_player">
+        <audio-player title="My cool super long named audio sound"
+            src="song/song.mp3"
+            bar-width="5"
+            bar-gap="2"
+            preload autoplay
+        ></audio-player>
+    </div>
+    
+    <body class="container">
+        
+        <!-- <div class="people" id="listOfPeople">
+            <li v-for="item in people" style="list-style: none;">
+                <div class="card">
+                    <img :src="item.photo" class="picture">
+                    <p class="name">{{ item.name }}</p>
+                    <p class="opis">{{item.opis}}</p>
+                </div>
+            </li>
+        </div> -->
+        
     </body>
-
+    
+    
     <!-- <div class="wypelniacz">
     </div> -->
 
 
-    <!-- <script>
+    <script>
         let app = Vue.createApp({
             el: '#listOfPeople',
             data() {
@@ -73,5 +130,5 @@
         
         app.mount("#listOfPeople");
 
-    </script> -->
+    </script>
 </html>
