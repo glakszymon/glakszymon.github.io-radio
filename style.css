@@ -210,14 +210,16 @@ header{
 .buttonInsta{
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;
 }
 
 footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    /* position: fixed; */
+    /* left: 0; */
+    /* bottom: 0; */
     width: 100%;
     background-color: #00000031;
     /* height: auto; */
@@ -261,9 +263,10 @@ footer{
 
 .mediaButtons{
     display: flex;
+    
 }
 
 .media{
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
