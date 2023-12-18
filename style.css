@@ -270,3 +270,16 @@ footer{
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.image{
+    border: 1px solid #dff6ff;
+    border-radius: 1rem;
+    padding: 5px;
+    /* width: 150px; */
+}
+
+.image_radius
+{
+    border-radius: 1rem;
+    /* box-shadow: 10px 10px 10px 10px lightblue; */
+}
