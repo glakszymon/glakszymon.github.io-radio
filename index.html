@@ -58,8 +58,39 @@
                 preload autoplay
                 ></audio>
             </div> -->
-            <iframe src="https://zeno.fm/player/testy123" width="575" height="250" frameborder="0" scrolling="no"></iframe>
-            <!-- <a href="https://zeno.fm/" target="_blank" style="display: block; font-size: 0.9em; line-height: 10px;">A Zeno.FM Station</a> -->
+            <div class="dashboard-box minimized">
+                <div class="dashboard-box__playing">
+                    <div class="dashboard-box__playing-album">
+                        
+                    </div>
+                </div>
+
+                <div class="dashboard-box__controls">
+                    <div class="dashboard-box__play-controls">
+                        <div class="dashboard-box__play-btn">
+                            <audio controls="" id="audioPlayer" style="display: none" src="https://stream.zeno.fm/lypftxs2ohztv"></audio>
+
+                            <button class="btn-play jp-play"></button>
+                            <button class="btn-play jp-pause paused" style="display: none;"></button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-box__control-right"><div class=" dashboard-box__playing-song__wrap">
+                            <div class="dashboard-box__playing-song"></div>
+                            <div class="dashboard-box__playing-artist"></div>
+                        </div><div class="dashboard-box__volume">
+                            <button class="dashboard-box__volume-btn"><i class="icon-volume"></i></button>
+                            <div class="dashboard-box__volume-bar-container" style="display: none;">
+                                <input id="volumeSlider" type="range" data-rangeslider="" data-orientation="vertical" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+                                <div class="rangeslider volume-slider rangeslider--vertical" id="js-rangeslider-0" >
+                                    <div class="rangeslider__fill" style="height: 37.5px;"></div>
+                                    <div class="rangeslider__handle" style="bottom: 30px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         
