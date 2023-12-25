@@ -228,7 +228,9 @@ footer{
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-  }
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
 
 .logoFooter{
     width: 6rem;
