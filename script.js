@@ -272,6 +272,7 @@
             background: #111;
             margin: 0;
             border-radius: 3px;
+            display: none;
         }
         
         .play-btn {
