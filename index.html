@@ -152,7 +152,7 @@
               },
               methods: {
                 async fetchSongTitle() {
-                  const response = await fetch('http://your-shoutcast-server-url/nowplaying.xspf');
+                  const response = await fetch('https://stream.rcast.net/70732/nowplaying.xspf');
                   const xml = await response.text();
                   const parser = new DOMParser();
                   const xmlDoc = parser.parseFromString(xml, 'text/xml');
