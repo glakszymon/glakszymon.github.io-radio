@@ -8,7 +8,7 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="script.js"></script>
     </head>
-    <body>    
+    <body id="app>    
         <div class="inBuild">
             <img src="./images/warning.png" class="iconWarning">
             <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
@@ -141,57 +141,24 @@
     </body>
     <script>
         let app = Vue.createApp({
-            el: '#listOfPeople',
+            el: '#app', 
             data() {
                 return {
-                    people: [
-                        {   
-                            name: 'Szymon Gawrylak',
-                            photo: 'images/man.png',
-                            opis: 'jestem pierwszym'
-                        }, 
-                        {   
-                            name: 'Zuzanna Fil',
-                            photo: 'images/girl.png',
-                            opis: 'jestem drugim'
-                        }, 
-                        {   
-                            name: 'Krzysztof Lizak',
-                            photo: 'images/boy.png',
-                            opis: 'jestem trzeci'
-                        }, 
-                        {   
-                            name: 'Marcin Michniowski',
-                            photo: 'images/boy.png',
-                            opis: 'jestem trzeci'
-                        }, 
-                        {   
-                            name: 'Igor Szuliński',
-                            photo: 'images/boy.png',
-                            opis: 'jestem trzeci'
-                        }, 
-                        {   
-                            name: 'Anastazja Krawczyk',
-                            photo: 'images/boy.png',
-                            opis: 'jestem trzeci'
-                        }, 
-                        {   
-                            name: 'aaalekowek retotweras',
-                            photo: 'images/boy.png',
-                            opis: 'jestem trzeci'
-                        }, 
-                        {   
-                            name: 'trzeci',
-                            photo: 'images/boy.png',
-                            opis: 'jestem trzeci'
-                        }, 
-                    ]
+                    currentSong: null,
                 }
-            }
+            },
+            methods: {
+               getCurrentSong() {
+                    axios.get('http://live3.rcast.net:9000/currentsong?sid=#')
+                    .then(response => {
+                        this.currentSong = response.data;
+                    })
+                } 
+            },
             
         });
         
-        app.mount("#listOfPeople");
+        app.mount("#app");
 
     </script>
 </html>
