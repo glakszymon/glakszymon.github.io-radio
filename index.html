@@ -153,7 +153,7 @@
               methods: {
                 async fetchSongTitle() {
                   try {
-                    const response = await fetch('http://your-shoutcast-server-url/stats');
+                    const response = await fetch('http://live3.rcast.net:9000/stats');
                     const data = await response.text();
                     // Extract the song title from the data, the response format may vary
                     this.songTitle = extractSongTitle(data);
