@@ -49,6 +49,7 @@ nav{
     position: relative;
     padding-bottom: 0.75rem;
     color: #DFF6FF;
+    cursor: pointer;
 }
 
 .link a::after{
@@ -91,6 +92,14 @@ nav{
     position: absolute;
     box-shadow: 0 0 1000px 50px #A9DCFF;
     z-index: -100;
+}
+
+.blur2{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #A9DCFF;
+    z-index: -100;
+    top: 128rem;
+    right: 5rem;
 }
 
 header{
@@ -137,11 +146,11 @@ header{
 }
 
 .card:hover{
-    transform: scale(1.1) .2s;
+    transform: scale(1.2); 
     position: relative;
     z-index: 2;
     
-    box-shadow: 0 7px 20px 5px #00000088;
+    /* box-shadow: 0 7px 20px 5px #00000088; */
 }
 
 .people{
@@ -152,7 +161,7 @@ header{
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     width: fit-content;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
 }
 
 .name, .opis{
@@ -174,8 +183,8 @@ header{
     z-index: 10;
     margin-left: 0;
     margin-right: 0;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin-top: 0.2rem;
+    margin-bottom: 6rem;
 }
 
 /* 88888888888888888888888888888888888888888888888 */
@@ -284,4 +293,173 @@ footer{
 {
     border-radius: 1rem;
     /* box-shadow: 10px 10px 10px 10px lightblue; */
+}
+
+.wpis{
+    display: flex;
+    margin-top: 2.5rem;
+}
+
+.blog{
+    margin-top: 3rem;
+}
+
+.tekst{
+    /* padding: 1rem; */
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1rem;
+}
+
+.photoWpis{
+    width: 16rem;
+    height: 12rem;
+    border: 1px solid #dff6ff;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nawigacja{
+    display: flex;
+    margin-bottom: 1rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  /* background-color: black; */
+    margin-top: 2rem;
+}
+
+.arrow_button{
+    width: 1.5rem;
+    height: 1.5rem;
+    /* background-color: aquamarine; */
+    /* margin-top: 0.4rem; */
+    margin-right: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.infoPlayer{
+    background-color: #01131e;
+    border-radius: 0.3rem;
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    margin-top: 4rem;
+}
+
+.image_player{
+    width: 5rem;
+    height: 5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.playerTextInfo{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* .centerText{
+    padding-top: auto;
+    padding-bottom: auto;
+} */
+
+/* .nameAudycjaInfo{
+    margin-left: 0.1rem;
+} */
+
+.nawigacjaRamowka{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    /* background-color: aqua; */
+    text-align: center;
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+}
+
+.RamowkaTable{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 4rem;
+}
+
+.titleRamowka{
+    width: 25rem;
+}
+
+.godzinaRamowka{
+    width: 6rem;
+    text-align: center;
+}
+
+.godzinaRamowka, .titleRamowka{
+    padding: 0.4rem;
+    border-bottom: 0.1rem solid white;
+}
+
+.nawigacjaSongs{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    /* background-color: aqua; */
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.scrollUp{
+    position: fixed;
+    right: 1.3rem;
+    bottom: 1.3rem;
+    background-color: #1b4a67;
+    border-radius: 10rem;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 9px 2px #16618f;
+    transition: transform 0.5s; 
+}
+
+.scrollUp:hover {
+    transform: rotate(360deg);
+}
+
+.photo_scroll_up{
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+}
+
+.background_of_people{
+    background-color: #113348;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+
+.title_people_style{
+    margin-inline: auto;
+    width: fit-content;
+    margin-bottom: 4rem;
+}
+
+.buttonInfo{
+    background-color: #0000;
+    border: none;
+}
+
+.autor_Info_Post{
+    margin-top: 1rem;
+}
+
+.title_post{
+    margin-bottom: 0.5rem;
 }
