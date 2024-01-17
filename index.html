@@ -145,21 +145,27 @@
             data() {
                 return {
                   songTitle: '',
-            };
+                };
               },
               mounted() {
                 this.fetchSongTitle();
               },
               methods: {
                 async fetchSongTitle() {
-                  const response = await fetch('http://http://live3.rcast.net:9000/nowplaying.xspf');
-                  const xml = await response.text();
-                  const parser = new DOMParser();
-                  const xmlDoc = parser.parseFromString(xml, 'text/xml');
-                  const titleElement = xmlDoc.getElementsByTagName('title')[0];
-                  this.songTitle = titleElement.textContent;
+                  try {
+                    const response = await fetch('http://your-shoutcast-server-url/stats');
+                    const data = await response.text();
+                    // Extract the song title from the data, the response format may vary
+                    this.songTitle = extractSongTitle(data);
+                  } catch (error) {
+                    console.error('Error fetching song title: ', error);
+                  }
                 },
-            },            
+                extractSongTitle(data) {
+                  // Implement the logic to extract the song title from the response data
+                  // Example: if the response is in HTML format, you can use DOMParser to parse the data and extract the song title
+                },
+            },
         });
         
         app.mount("#app");
