@@ -48,6 +48,29 @@
                 <img class="image_radius" src="./images/radio_studio.jpg">
             </div>
         </header>
+
+        <div class="container">
+                <div class="infoPlayer" id="player">
+                    <img src="./images/girl.png" class="image_player">
+                    <div class="playerTextInfo" v-for="w in aktualnaAudycja">
+                        <p class="centerText">Na antenie</p>
+                        <p class="centerText">Teraz gramy</p>
+                        <h3 class="nameAudycjaInfo">{{w.title}}</h3>
+                        <h3 class="centerText" ><div v-if="currentSong">{{ currentSong }}</div></h3>
+                        <p class="centerText">{{w.creator}}</p>
+                    </div>
+                </div>
+            
+                <div class="audio_player">
+                    <audio-player title="My cool super long named audio sound"
+                    src="./song/Nie trać głowy (Don't Lose Your Head - SIX Polish version) Aleksandra Lewicka.mp3"
+                    bar-width="5"
+                    bar-gap="2"
+                    crossorigin="anonymous"
+                    preload autoplay
+                    ></audio-player>
+                </div>        
+            </div>
         
         <div class="container">
             <div class="audio_player">
