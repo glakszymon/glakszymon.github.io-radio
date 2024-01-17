@@ -56,7 +56,7 @@
                         <p class="centerText">Na antenie</p>
                         <p class="centerText">Teraz gramy</p>
                         <h3 class="nameAudycjaInfo">title</h3>
-                        <h3 class="centerText" ><div v-if="currentSong">{{ currentSong }}</div></h3>
+                        <h3 class="centerText" ><div v-if="currentSong">{{ songTitle }}</div></h3>
                         <p class="centerText">creator</p>
                     </div>
                 </div>
@@ -144,18 +144,22 @@
             el: '#app', 
             data() {
                 return {
-                    currentSong: null,
-                }
-            },
-            methods: {
-               getCurrentSong() {
-                    axios.get('http://live3.rcast.net:9000/currentsong?sid=1')
-                    .then(response => {
-                        this.currentSong = response.data;
-                    })
-                } 
-            },
-            
+                  songTitle: '',
+            };
+              },
+              mounted() {
+                this.fetchSongTitle();
+              },
+              methods: {
+                async fetchSongTitle() {
+                  const response = await fetch('http://your-shoutcast-server-url/nowplaying.xspf');
+                  const xml = await response.text();
+                  const parser = new DOMParser();
+                  const xmlDoc = parser.parseFromString(xml, 'text/xml');
+                  const titleElement = xmlDoc.getElementsByTagName('title')[0];
+                  this.songTitle = titleElement.textContent;
+                },
+            },            
         });
         
         app.mount("#app");
