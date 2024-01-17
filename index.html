@@ -152,7 +152,7 @@
               },
               methods: {
                 async fetchSongTitle() {
-                  const response = await fetch('http://live3.rcast.net:9000//currentsong?sid=1');
+                  const response = await fetch('http://live3.rcast.net:9000/currentsong?sid=1');
                   const xml = await response.text();
                   const parser = new DOMParser();
                   const xmlDoc = parser.parseFromString(xml, 'text/xml');
