@@ -144,18 +144,10 @@
             el: '#app', 
             data() {
                 return {
-                  currentSong: null,
-                };
-              },
-              mounted() {
-                this.updateSong();
-
-                  setInterval(() => {
-                        this.updateSong();
-                    }, 5000)
-                  
-              },
-              methods: {
+                    currentSong: null,
+                }
+            },
+            methods: {
                 updateSong() {
                     axios.get('http://live3.rcast.net:9000/currentsong?sid=1')
                         .then(response => {
@@ -163,6 +155,14 @@
                     })
                 }
             },
+
+            mounted() {
+                this.updateSong();
+
+                setInterval(() => {
+                    this.updateSong();
+                }, 5000)
+            }
         });
         
         app.mount("#app");
