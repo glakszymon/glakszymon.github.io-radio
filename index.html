@@ -150,7 +150,7 @@
             },
             methods: {
                 updateSong() {
-                    axios.get('http://live3.rcast.net:9000/;stream/currentsong?sid=1')
+                    axios.get('https://stream.rcast.net/70732/currentsong?sid=1')
                         .then(response => {
                         this.currentSong = response.data
                     })
