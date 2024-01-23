@@ -9,136 +9,138 @@
         <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
         <script src="script.js"></script>
     </head>
-    <body id="app">    
-        <div class="inBuild">
-            <img src="./images/warning.png" class="iconWarning">
-            <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
-            <img src="./images/warning.png" class="iconWarning">
-        </div>
-        <nav>
-            <div class="nav_logo">
-                <a href="#">
-                    <img src="./images/logo.png">
-                </a>
+    <body>    
+        <div id="app">
+            <div class="inBuild">
+                <img src="./images/warning.png" class="iconWarning">
+                <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
+                <img src="./images/warning.png" class="iconWarning">
             </div>
+            <nav>
+                <div class="nav_logo">
+                    <a href="#">
+                        <img src="./images/logo.png">
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li class="link"><a href="#">Info</a></li>
+                    <li class="link"><a href="#">Program</a></li>
+                    <li class="link"><a href="#">Muzyka</a></li>
+                    <li class="link"><a href="#">Redaktorzy</a></li>
+                </ul>
+            </nav>
             
-            <ul class="nav-links">
-                <li class="link"><a href="#">Info</a></li>
-                <li class="link"><a href="#">Program</a></li>
-                <li class="link"><a href="#">Muzyka</a></li>
-                <li class="link"><a href="#">Redaktorzy</a></li>
-            </ul>
-        </nav>
-        
-        
-        <header class="container">
-            <div class="content">
-                <span class="blur"></span>
-                <span class="blur"></span>
-                <h4>Witaj na oficjalnej stronie</h4>
-                <H1>Stasiego Radia! </H1>
-                <p>
-                    Stasie Radio to radio internetowe mające swoją siedzibę w I LO im. Stanisława Staszica w Lublinie. 
-                    Zostało stworzone na fundamentach cenionego wśród społeczności szkolnej radiowęzła. 
-                    Jest inicjatywą opartą na wieloletniej tradycji, którą kultywujemy w odnowiony sposób. 
-                    Zapraszamy każdego do słuchania. Odpręż się przy ulubionej muzyce, poznaj lokalne wieści, posłuchaj wyjątkowych audycji, 
-                    a także weź udział w różnorodnych teleturniejach i zabawach!
-                </p>
-            </div>
-            <div class="image">
-                <img class="image_radius" src="./images/radio_studio.jpg">
-            </div>
-        </header>
-
-        <div class="container">
-                <div class="infoPlayer" id="player">
-                    <img src="./images/girl.png" class="image_player">
-                    <div class="playerTextInfo">
-                        <p class="centerText">Na antenie</p>
-                        <p class="centerText">Teraz gramy</p>
-                        <h3 class="nameAudycjaInfo">title</h3>
-                        <h3 class="centerText" >{{ currentSong }}</h3>
-                        <p class="centerText">creator</p>
+            
+            <header class="container">
+                <div class="content">
+                    <span class="blur"></span>
+                    <span class="blur"></span>
+                    <h4>Witaj na oficjalnej stronie</h4>
+                    <H1>Stasiego Radia! </H1>
+                    <p>
+                        Stasie Radio to radio internetowe mające swoją siedzibę w I LO im. Stanisława Staszica w Lublinie. 
+                        Zostało stworzone na fundamentach cenionego wśród społeczności szkolnej radiowęzła. 
+                        Jest inicjatywą opartą na wieloletniej tradycji, którą kultywujemy w odnowiony sposób. 
+                        Zapraszamy każdego do słuchania. Odpręż się przy ulubionej muzyce, poznaj lokalne wieści, posłuchaj wyjątkowych audycji, 
+                        a także weź udział w różnorodnych teleturniejach i zabawach!
+                    </p>
+                </div>
+                <div class="image">
+                    <img class="image_radius" src="./images/radio_studio.jpg">
+                </div>
+            </header>
+    
+            <div class="container">
+                    <div class="infoPlayer" id="player">
+                        <img src="./images/girl.png" class="image_player">
+                        <div class="playerTextInfo">
+                            <p class="centerText">Na antenie</p>
+                            <p class="centerText">Teraz gramy</p>
+                            <h3 class="nameAudycjaInfo">title</h3>
+                            <h3 class="centerText" >{{ currentSong }}</h3>
+                            <p class="centerText">creator</p>
+                        </div>
                     </div>
+                
+                    <div class="audio_player">
+                        <div class="audio_player">
+                            <audio-player title="My cool super long named audio sound"
+                            src="https://stream.rcast.net/70732"    
+                            bar-width="5"
+                            bar-gap="2"
+                            crossorigin="anonymous"
+                            preload autoplay
+                            ></audio-player>
+                        </div>
+                    </div>        
                 </div>
             
-                <div class="audio_player">
-                    <div class="audio_player">
-                        <audio-player title="My cool super long named audio sound"
-                        src="https://stream.rcast.net/70732"    
-                        bar-width="5"
-                        bar-gap="2"
-                        crossorigin="anonymous"
-                        preload autoplay
-                        ></audio-player>
-                    </div>
-                </div>        
+            
+            <div class="container">
+            <!-- <div class="people" id="listOfPeople">
+                    <li v-for="item in people" style="list-style: none;">
+                        <div class="card">
+                            <img :src="item.photo" class="picture">
+                            <p class="name">{{ item.name }}</p>
+                            <p class="opis">{{item.opis}}</p>
+                        </div>
+                    </li>
+                </div> -->
+                
+                
             </div>
-        
-        
-        <div class="container">
-        <!-- <div class="people" id="listOfPeople">
-                <li v-for="item in people" style="list-style: none;">
-                    <div class="card">
-                        <img :src="item.photo" class="picture">
-                        <p class="name">{{ item.name }}</p>
-                        <p class="opis">{{item.opis}}</p>
-                    </div>
-                </li>
+            
+            
+            <!-- <div class="wypelniacz">
             </div> -->
             
-            
-        </div>
-        
-        
-        <!-- <div class="wypelniacz">
-        </div> -->
-        
-        <footer class="kontakt">
-            <div class="container" >
-                <div class="grid-container">
-                    <!-- <div>1</div>
-                    <div>2</div>
-                    <div>3</div>  
-                    <div>4</div>
-                    <div>5</div>
-                    <div>6</div>  
-                    <div>7</div>
-                    <div>8</div> -->
-                <img class="logoFooter" src="./images/logo.png">
-                <div class="oficial">
-                    <p style="font-weight: bold;">Kontakt:</p>
-                    <ul class="kontaktList">
-                        <li class="kontatkWartosc">
-                            <div style="display: flex;">
-                                <image src="./images/gmail.png" class="kontaktyIcon"></image>
-                                <p>Mail:</p>
-                            </div>
-                            <a href="mailto:stasieradiolublin@gmail.com" style="margin-left: 0.5rem;">stasieradiolublin@gmail.com</a>
-                        </li>
-                        <!-- <li class="kontatkWartosc">
-                            <div style="display: flex;">
-                                <image src="./images/phone-call.png" class="kontaktyIcon"></image>
-                                <p>Telefon:</p>
-                            </div>
-                            <p style="margin-left: 0.5rem;">519 083 221</p>
-                        </li> -->
-                    </ul>
-                </div>
-                <div class="media">
-                    <p style="font-weight: bold;">Media:</p>
-                    <div class="mediaButtons">
-                        <a class="buttonInsta" target="_blank" href="https://www.instagram.com/stasie_radio/">
-                            <img src="./images/instagram.png" alt="HTML tutorial" style="width:2.5rem;height:2.5rem;">
-                        </a>
-                        <a class="buttonInsta" target="_blank" href="https://tellonym.me/radio.staszic">
-                            <img src="./images/chat-bubble.png" alt="HTML tutorial" style="width:2.5rem;height:2.5rem;" >
-                        </a>  
+            <footer class="kontakt">
+                <div class="container" >
+                    <div class="grid-container">
+                        <!-- <div>1</div>
+                        <div>2</div>
+                        <div>3</div>  
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>  
+                        <div>7</div>
+                        <div>8</div> -->
+                    <img class="logoFooter" src="./images/logo.png">
+                    <div class="oficial">
+                        <p style="font-weight: bold;">Kontakt:</p>
+                        <ul class="kontaktList">
+                            <li class="kontatkWartosc">
+                                <div style="display: flex;">
+                                    <image src="./images/gmail.png" class="kontaktyIcon"></image>
+                                    <p>Mail:</p>
+                                </div>
+                                <a href="mailto:stasieradiolublin@gmail.com" style="margin-left: 0.5rem;">stasieradiolublin@gmail.com</a>
+                            </li>
+                            <!-- <li class="kontatkWartosc">
+                                <div style="display: flex;">
+                                    <image src="./images/phone-call.png" class="kontaktyIcon"></image>
+                                    <p>Telefon:</p>
+                                </div>
+                                <p style="margin-left: 0.5rem;">519 083 221</p>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="media">
+                        <p style="font-weight: bold;">Media:</p>
+                        <div class="mediaButtons">
+                            <a class="buttonInsta" target="_blank" href="https://www.instagram.com/stasie_radio/">
+                                <img src="./images/instagram.png" alt="HTML tutorial" style="width:2.5rem;height:2.5rem;">
+                            </a>
+                            <a class="buttonInsta" target="_blank" href="https://tellonym.me/radio.staszic">
+                                <img src="./images/chat-bubble.png" alt="HTML tutorial" style="width:2.5rem;height:2.5rem;" >
+                            </a>  
+                        </div>
+                    </div>
                     </div>
                 </div>
-                </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
     </body>
     <script>
         let app = Vue.createApp({
