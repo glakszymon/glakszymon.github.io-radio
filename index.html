@@ -56,7 +56,7 @@
                         <p class="centerText">Na antenie</p>
                         <p class="centerText">Teraz gramy</p>
                         <h3 class="nameAudycjaInfo">title</h3>
-                        <h3 class="centerText" ><div v-if="currentSong">{{ songTitle }}</div></h3>
+                        <h3 class="centerText" >{{ currentSong }}</h3>
                         <p class="centerText">creator</p>
                     </div>
                 </div>
@@ -144,27 +144,24 @@
             el: '#app', 
             data() {
                 return {
-                  songTitle: '',
+                  currentSong: null,
                 };
               },
               mounted() {
-                this.fetchSongTitle();
+                this.updateSong();
+
+                  setInterval(() => {
+                        this.updateSong();
+                    }, 5000)
+                  
               },
               methods: {
-                async fetchSongTitle() {
-                  try {
-                    const response = await fetch('https://stream.rcast.net/70732/currentsong?sid=1');
-                    const data = await response.text();
-                    // Extract the song title from the data, the response format may vary
-                    this.songTitle = extractSongTitle(data);
-                  } catch (error) {
-                    console.error('Error fetching song title: ', error);
-                  }
-                },
-                extractSongTitle(data) {
-                  // Implement the logic to extract the song title from the response data
-                  // Example: if the response is in HTML format, you can use DOMParser to parse the data and extract the song title
-                },
+                updateSong() {
+                    axios.get('http://live3.rcast.net:9000/currentsong?sid=1')
+                        .then(response => {
+                        this.currentSong = response.data
+                    })
+                }
             },
         });
         
