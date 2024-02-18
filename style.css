@@ -516,4 +516,30 @@ footer{
         width: 3.5rem;
         height: 3.5rem;
     }
+
+    .photo_scroll_up{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .scrollUp{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .blur2{
+        position: absolute;
+        box-shadow: 0 0 250px 50px #A9DCFF;
+        z-index: -100;
+        top: 115rem;
+        right: 5rem;
+    }
+
+    .blur{
+        position: absolute;
+        box-shadow: 0 0 500px 100px #A9DCFF;
+        z-index: -100;
+        top: 0rem;
+        left: 5rem;
+    }
 }
