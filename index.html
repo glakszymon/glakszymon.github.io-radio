@@ -63,19 +63,19 @@
             
             <div class="container">
                 <div class="infoPlayer" id="player">
-                    <img src="./images/girl.png" class="image_player">
+                    <!-- <img src="./images/girl.png" class="image_player"> -->
                     <div class="playerTextInfo" v-for="w in aktualnaAudycja">
                         <p class="centerText">Na antenie</p>
                         <p class="centerText">Teraz gramy</p>
-                        <h3 class="nameAudycjaInfo">{{w.title}}</h3>
+                        <h3 class="nameAudycjaInfo">{{ w.title }}</h3>
                         <h3 class="centerText" >{{ currentSong }}</h3>
-                        <p class="centerText">{{w.creator}}</p>
+                        <p class="centerText">{{ w.creator }}</p>
                     </div>
                     
                 </div>
                 <div class="audio_player">
                     <audio-player title="My cool super long named audio sound"
-                    src="./song/Nie trać głowy (Don't Lose Your Head - SIX Polish version) Aleksandra Lewicka.mp3"
+                    src="./song/song.mp3"
                     bar-width="5"
                     bar-gap="2"
                     crossorigin="anonymous"
@@ -92,7 +92,7 @@
                             <button @click="previousWeekDay" class="previousButton">
                                 <img src="./images/angle-left.png" class="arrow_button">
                             </button>
-                            <h3 style="font-weight: 400;">{{ nameOfWeekDay }}</h3>
+                            <h3 class="weekDayStyle">{{ nameOfWeekDay }}</h3>
                             <button @click="nextWeekDay" class="nextButton">
                                 <img src="./images/angle-right.png" class="arrow_button">
                             </button>
@@ -158,13 +158,13 @@
                     <div class="nawigacja">
                         <button @click="loadPrevious" v-if="nextIndex > 0" class="buttonInfo"><img src="./images/angle-left.png" class="arrow_button"></button> 
                         <!-- <img @click="loadPrevious" v-if="nextIndex > 0" src="./images/angle-left.png" class="arrow_button"> -->
-                        <h2>Wydarzenia</h2>
+                        <h1>Wydarzenia</h1>
                         <button @click="loadMore" v-if="nextIndex+numberOfShowingInfo < allwiadomosci.length" class="buttonInfo"><img src="./images/angle-right.png" class="arrow_button"></button>
                         <!-- <img @click="loadMore" src="./images/angle-right.png" class="arrow_button"> -->
                     </div>
                     
                     <div v-for="n in showingWiadomosci" class="wpis">
-                        <img src="./images/20231218_133456.jpg" class="photoWpis">
+                        <!-- <img src="./images/20231218_133456.jpg" class="photoWpis"> -->
                         <div class="tekst">
                             <h2 class="title_post">{{ n.Title }}</h2>
                             <p>{{ n.Tresc }}</p>
@@ -195,10 +195,10 @@
                         <p style="font-weight: bold;">Media:</p>
                         <div class="mediaButtons">
                             <a class="buttonInsta" target="_blank" href="https://www.instagram.com/stasie_radio/">
-                                <img src="./images/instagram.png" alt="HTML tutorial" style="width:2.5rem;height:2.5rem;">
+                                <img src="./images/instagram.png" alt="HTML tutorial" class="buttonInstaSize">
                             </a>
                             <a class="buttonInsta" target="_blank" href="https://tellonym.me/radio.staszic">
-                                <img src="./images/chat-bubble.png" alt="HTML tutorial" style="width:2.5rem;height:2.5rem;" >
+                                <img src="./images/chat-bubble.png" alt="HTML tutorial" class="buttonInstaSize">
                             </a>  
                         </div>
                     </div>
@@ -228,12 +228,12 @@
             },
             methods: {
                 updateRamowka(){
-                    fetch('https://stasieradio.pl/cgi-bin/phpAplikacja/getWeekProgram.php?week='+this.actualWeekDay)
-                        .then(odp => odp.json())
-                        .then(data => {
-                            this.listItems = data;
-                        })
-                        .catch(err => console.log(err))
+                    // fetch('https://stasieradio.pl/cgi-bin/phpAplikacja/getWeekProgram.php?week='+this.actualWeekDay)
+                    //     .then(odp => odp.json())
+                    //     .then(data => {
+                    //         this.listItems = data;
+                    //     })
+                    //     .catch(err => console.log(err))
 
                     switch(this.actualWeekDay) {
                     case 0:

@@ -363,6 +363,23 @@
             transform: translateY(-50%);
             opacity: 0.4;
         }
+
+        @media only screen and (max-width: 1000px) {
+          .play-btn {
+            height: 60px;
+            width: 60px;
+          }
+
+          .volume-bar {
+            width: 60px;
+            height: 60px;
+          }
+
+          .audio-player {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+      }
       </style>
     `
     }

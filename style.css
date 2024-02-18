@@ -473,6 +473,14 @@ footer{
     background: none;
 }
 
+.weekDayStyle{
+    font-weight: 400;
+}
+
+.buttonInstaSize{
+    width:2.5rem;
+    height:2.5rem;
+}
 
 @media only screen and (max-width: 1000px) {
     .image{
@@ -481,5 +489,31 @@ footer{
 
     header{
         display: flex;
+    }
+
+    .RamowkaTable{
+        font-size: 2rem;
+    }
+
+    h1{
+        font-size: 3rem;
+    }
+
+    .weekDayStyle{
+        font-size: 2.5rem;
+    }
+
+    .oficial, .media{
+        font-size: 1.6rem;
+    }
+
+    .kontaktyIcon{
+        width: 2rem;
+        height: 2rem;    
+    }
+
+    .buttonInsta, .buttonInstaSize{
+        width: 3.5rem;
+        height: 3.5rem;
     }
 }
