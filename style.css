@@ -176,10 +176,14 @@ header{
 }
 
 /* ---------------------------------------------------------- */
+.audio-player{
+    
+}
+
 
 .audio_player{
-    position: sticky;
-    top: 1rem;
+    /* position: sticky;
+    top: 1rem; */
     z-index: 10;
     margin-left: 0;
     margin-right: 0;
@@ -235,6 +239,7 @@ footer{
 }
 
 .grid-container {
+
     display: grid;
     grid-template-columns: auto auto auto;
     padding-top: 1.5rem;
@@ -393,7 +398,7 @@ footer{
 }
 
 .titleRamowka{
-    width: 25rem;
+    /* width: 25rem; */
 }
 
 .godzinaRamowka{
@@ -462,4 +467,19 @@ footer{
 
 .title_post{
     margin-bottom: 0.5rem;
+}
+
+.previousButton, .nextButton{
+    background: none;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .image{
+        display: none;
+    }
+
+    header{
+        display: flex;
+    }
 }

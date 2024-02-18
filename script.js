@@ -245,7 +245,7 @@
         }
         
         .audio-player {
-          background: #111;
+          background: #01131e;
           border-radius: 5px;
           padding: 5px;
           color: #DFF6FF;
@@ -253,6 +253,8 @@
           align-items: center;
           position: relative;
           margin: 0 0 25px;
+          position: sticky;
+          top: 1rem;
         }
         
         .audio-name {
@@ -272,7 +274,7 @@
             background: #111;
             margin: 0;
             border-radius: 3px;
-            display: none;
+            
         }
         
         .play-btn {

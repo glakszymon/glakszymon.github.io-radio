@@ -5,18 +5,20 @@
         <title>Stasie Radio</title>
         <link rel="shortcut icon" type="image/jpg" href="./images/logo.png"/>
         <link rel="stylesheet" href="style.css">
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-        <script src="script.js"></script>
+
     </head>
-    <body>    
-        <div id="app">
+    <body>
+        <div id="app">    
             <div class="inBuild">
                 <img src="./images/warning.png" class="iconWarning">
                 <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
                 <img src="./images/warning.png" class="iconWarning">
             </div>
-            <nav>
+            <nav id="navigation">
                 <div class="nav_logo">
                     <a href="#">
                         <img src="./images/logo.png">
@@ -24,21 +26,29 @@
                 </div>
                 
                 <ul class="nav-links">
-                    <li class="link"><a href="#">Info</a></li>
-                    <li class="link"><a href="#">Program</a></li>
-                    <li class="link"><a href="#">Muzyka</a></li>
-                    <li class="link"><a href="#">Redaktorzy</a></li>
+                    <li class="link" ><a @click="scrollToTarget('info')">Info</a></li>
+                    <li class="link"><a @click="scrollToTarget('player')">Słuchaj Radia</a></li>
+                    <li class="link"><a @click="scrollToTarget('ramowka')">Ramówka</a></li>
+                    <li class="link"><a @click="scrollToTarget('songs')">Piosenki</a></li>
+                    <li class="link"><a @click="scrollToTarget('people_of_radio')">Redaktorzy</a></li>
+                    <li class="link"><a @click="scrollToTarget('info_of_radio')">Wiadomości</a></li>
+                    <li class="link"><a @click="scrollToTarget('footer')">Kontakt</a></li>
                 </ul>
             </nav>
-            
+
+            <div class="scrollUp" @click="scrollToTarget('navigation')">
+                <img src="./images/upload.png" class="photo_scroll_up">
+            </div>
+
             
             <header class="container">
-                <div class="content">
+                <div class="content" id="info">
                     <span class="blur"></span>
                     <span class="blur"></span>
                     <h4>Witaj na oficjalnej stronie</h4>
                     <H1>Stasiego Radia! </H1>
                     <p>
+                        
                         Stasie Radio to radio internetowe mające swoją siedzibę w I LO im. Stanisława Staszica w Lublinie. 
                         Zostało stworzone na fundamentach cenionego wśród społeczności szkolnej radiowęzła. 
                         Jest inicjatywą opartą na wieloletniej tradycji, którą kultywujemy w odnowiony sposób. 
@@ -50,62 +60,124 @@
                     <img class="image_radius" src="./images/radio_studio.jpg">
                 </div>
             </header>
-    
+            
             <div class="container">
-                    <div class="infoPlayer" id="player">
-                        <img src="./images/girl.png" class="image_player">
-                        <div class="playerTextInfo">
-                            <p class="centerText">Na antenie</p>
-                            <p class="centerText">Teraz gramy</p>
-                            <h3 class="nameAudycjaInfo">title</h3>
-                            <h3 class="centerText"><div v-if="currentSong">{{ currentSong }}</div><div v-else>Aktualnie nic nie gramy 😢</div></h3>
-                            <p class="centerText">creator</p>
+                <div class="infoPlayer" id="player">
+                    <img src="./images/girl.png" class="image_player">
+                    <div class="playerTextInfo" v-for="w in aktualnaAudycja">
+                        <p class="centerText">Na antenie</p>
+                        <p class="centerText">Teraz gramy</p>
+                        <h3 class="nameAudycjaInfo">{{w.title}}</h3>
+                        <h3 class="centerText" >{{ currentSong }}</h3>
+                        <p class="centerText">{{w.creator}}</p>
+                    </div>
+                    
+                </div>
+                <div class="audio_player">
+                    <audio-player title="My cool super long named audio sound"
+                    src="./song/Nie trać głowy (Don't Lose Your Head - SIX Polish version) Aleksandra Lewicka.mp3"
+                    bar-width="5"
+                    bar-gap="2"
+                    crossorigin="anonymous"
+                    preload autoplay
+                    ></audio-player>
+                </div>        
+            </div>
+
+            <div style="background-color: #113348;">
+                <div class="container" id="ramowka">
+                    <div class="nawigacjaRamowka">
+                        <h1>Ramówka</h1>
+                        <div class="nawigacja">
+                            <button @click="previousWeekDay" class="previousButton">
+                                <img src="./images/angle-left.png" class="arrow_button">
+                            </button>
+                            <h3 style="font-weight: 400;">{{ nameOfWeekDay }}</h3>
+                            <button @click="nextWeekDay" class="nextButton">
+                                <img src="./images/angle-right.png" class="arrow_button">
+                            </button>
                         </div>
                     </div>
-                
-                    <div class="audio_player">
-                        <div class="audio_player">
-                            <audio-player title="My cool super long named audio sound"
-                            src="https://stream.rcast.net/70732"    
-                            bar-width="5"
-                            bar-gap="2"
-                            crossorigin="anonymous"
-                            preload autoplay
-                            ></audio-player>
-                        </div>
-                    </div>        
+                    <table class="RamowkaTable">
+                        <tr>
+                            <td class="godzinaRamowka">Godzina</td>
+                            <td class="titleRamowka">Autor</td>
+                            <td class="titleRamowka">Tytuł</td>
+                            <!-- <td class="titleRamowka">{{ zz.weekDayNumber }}</td> -->
+                            <td class="titleRamowka">Opis</td>
+                        </tr>
+                        <tr v-for="zz in listItems">
+                            <td class="godzinaRamowka">{{ zz.timeStart }}</td>
+                            <td class="titleRamowka">{{ zz.creator }}</td>
+                            <td class="titleRamowka">{{ zz.title }}</td>
+                            <!-- <td class="titleRamowka">{{ zz.weekDayNumber }}</td> -->
+                            <td class="titleRamowka">{{ zz.opis }}</td>
+                        </tr>
+                    </table>
                 </div>
-            
-            
-            <div class="container">
-            <!-- <div class="people" id="listOfPeople">
-                    <li v-for="item in people" style="list-style: none;">
-                        <div class="card">
-                            <img :src="item.photo" class="picture">
-                            <p class="name">{{ item.name }}</p>
-                            <p class="opis">{{item.opis}}</p>
-                        </div>
-                    </li>
-                </div> -->
-                
-                
+            </div>
+
+            <div class="container" id="songs">
+                <span class="blur2"></span>
+                <span class="blur2"></span>
+                <div class="nawigacjaSongs">
+                    <h1>Piosenki</h1>
+                </div>
+                <table class="RamowkaTable">
+                    <tr v-for="zz in 10">
+                        <td class="godzinaRamowka">19:59</td>
+                        <td class="titleRamowka">aaaaaaaaa ssssssss ssss sss sss aaaaaa</td>
+                    </tr>
+                </table>
             </div>
             
             
-            <!-- <div class="wypelniacz">
-            </div> -->
+            <div class="background_of_people">
+                <div class="container" id="people_of_radio">
+                    <h1 class="title_people_style">Redaktorzy</h1>
+                    <div class="people">
+                        <!-- <ul>
+                            <li v-for="item in listItems">
+                              {{ item }} 
+                            </li>
+                        </ul> -->
+
+                        <li v-for="item in people" style="list-style: none;">
+                            <div class="card">
+                                <img :src="item.photo" class="picture">
+                                <p class="name">{{ item.creator }}</p>
+                                <p class="opis">{{ item.opis }}</p>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
             
-            <footer class="kontakt">
+            <div class="container" id="info_of_radio">
+                <div class="blog" id="app">
+                    <div class="nawigacja">
+                        <button @click="loadPrevious" v-if="nextIndex > 0" class="buttonInfo"><img src="./images/angle-left.png" class="arrow_button"></button> 
+                        <!-- <img @click="loadPrevious" v-if="nextIndex > 0" src="./images/angle-left.png" class="arrow_button"> -->
+                        <h2>Wydarzenia</h2>
+                        <button @click="loadMore" v-if="nextIndex+numberOfShowingInfo < allwiadomosci.length" class="buttonInfo"><img src="./images/angle-right.png" class="arrow_button"></button>
+                        <!-- <img @click="loadMore" src="./images/angle-right.png" class="arrow_button"> -->
+                    </div>
+                    
+                    <div v-for="n in showingWiadomosci" class="wpis">
+                        <img src="./images/20231218_133456.jpg" class="photoWpis">
+                        <div class="tekst">
+                            <h2 class="title_post">{{ n.Title }}</h2>
+                            <p>{{ n.Tresc }}</p>
+                            <h5 class="autor_Info_Post">autor: {{ n.Autor }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+
+            <footer class="kontakt" id="footer">
                 <div class="container" >
                     <div class="grid-container">
-                        <!-- <div>1</div>
-                        <div>2</div>
-                        <div>3</div>  
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>  
-                        <div>7</div>
-                        <div>8</div> -->
                     <img class="logoFooter" src="./images/logo.png">
                     <div class="oficial">
                         <p style="font-weight: bold;">Kontakt:</p>
@@ -117,13 +189,6 @@
                                 </div>
                                 <a href="mailto:stasieradiolublin@gmail.com" style="margin-left: 0.5rem;">stasieradiolublin@gmail.com</a>
                             </li>
-                            <!-- <li class="kontatkWartosc">
-                                <div style="display: flex;">
-                                    <image src="./images/phone-call.png" class="kontaktyIcon"></image>
-                                    <p>Telefon:</p>
-                                </div>
-                                <p style="margin-left: 0.5rem;">519 083 221</p>
-                            </li> -->
                         </ul>
                     </div>
                     <div class="media">
@@ -137,7 +202,6 @@
                             </a>  
                         </div>
                     </div>
-                    </div>
                 </div>
             </footer>
         </div>
@@ -147,23 +211,140 @@
             el: '#app', 
             data() {
                 return {
+                    numberOfShowingInfo: 5,
+                    people: [],
+                    allwiadomosci: [],
+                    scrollLocation: null,
+                    nextIndex: 0,
+                    showingWiadomosci: [],
+                    aktualnaAudycja: [],
                     currentSong: null,
+                    
+                    actualWeekDay: 0,
+                    listItems: [],
+                    nameOfWeekDay: "Poniedziałek",
+                    current: new Date(),
                 }
             },
             methods: {
-                updateSong() {
-                    axios.get('https://stream.rcast.net/70732/currentsong?sid=1')
-                        .then(response => {
-                        this.currentSong = response.data
+                updateRamowka(){
+                    fetch('https://stasieradio.pl/cgi-bin/phpAplikacja/getWeekProgram.php?week='+this.actualWeekDay)
+                        .then(odp => odp.json())
+                        .then(data => {
+                            this.listItems = data;
+                        })
+                        .catch(err => console.log(err))
+
+                    switch(this.actualWeekDay) {
+                    case 0:
+                        this.nameOfWeekDay = "Poniedziałek";
+                        break;
+                    case 1:
+                        this.nameOfWeekDay = "Wtorek";
+                        break;
+                    case 2:
+                        this.nameOfWeekDay = "Środa";
+                        break;
+                    case 3:
+                        this.nameOfWeekDay = "Czwartek";
+                        break;
+                    case 4:
+                        this.nameOfWeekDay = "Piątek";
+                        break;
+                    case 5:
+                        this.nameOfWeekDay = "Sobota";
+                        break;
+                    case 6:
+                        this.nameOfWeekDay = "Niedziela";
+                        break;                    
+                    default:
+                        this.nameOfWeekDay = "ErrorTeraz";
+                        break; 
+                    }
+      
+                },
+
+                scrollToTarget(scrollLocation) {
+                    const element = document.getElementById(scrollLocation)
+                    element.scrollIntoView({
+                    behavior: 'smooth'
                     })
-                }
+                },
+
+                loadMore() {
+                    this.nextIndex += this.numberOfShowingInfo
+                    this.showingWiadomosci = this.allwiadomosci.slice(this.nextIndex, this.nextIndex + this.numberOfShowingInfo)
+                },
+
+                loadPrevious() {
+                    this.nextIndex -= this.numberOfShowingInfo  
+                    this.showingWiadomosci = this.allwiadomosci.slice(this.nextIndex, this.nextIndex + this.numberOfShowingInfo)
+                },
+
+                updateSong() {
+                    // axios.get('http://live3.rcast.net:9000/currentsong?sid=1')
+                    //     .then(response => {
+                    //     this.currentSong = response.data
+                    // })
+                },
+
+                nextWeekDay(){
+                    this.actualWeekDay += 1;
+                    if(this.actualWeekDay > 6){
+                        this.actualWeekDay = 0;
+                    }
+                    
+                    this.updateRamowka();
+                },
+
+                previousWeekDay(){
+                    this.actualWeekDay -= 1;
+                    if(this.actualWeekDay < 0){
+                        this.actualWeekDay = 6;
+                    }
+                    this.updateRamowka();
+                },
+
+
+
             },
 
             mounted() {
+                // fetch("http://localhost/getPeople.php")
+                //     .then(response => response.json())
+                //     .then(data => {
+                //         this.people = data;
+                //     });
+                this.actualWeekDay = this.current.getDay();
+                
+                    
                 this.updateSong();
+                this.updateRamowka();
 
                 setInterval(() => {
                     this.updateSong();
+
+                    fetch("http://localhost/getPeople.php")
+                        .then(res => res.json())
+                        .then(data => {
+                            this.people = data;
+                        })
+                        .catch(err => console.log(err))
+
+                    fetch("http://localhost/getInfo.php")
+                        .then(response => response.json())
+                        .then(data => {
+                            this.allwiadomosci = data;
+                            this.showingWiadomosci = this.allwiadomosci.slice(this.nextIndex, this.nextIndex + this.numberOfShowingInfo)
+                        });
+
+                    fetch("http://localhost/getAktualna.php")
+                        .then(res => res.json())
+                        .then(data => {
+                            this.aktualnaAudycja = data;
+                        })
+                        .catch(err => console.log(err))
+
                 }, 5000)
             }
         });
