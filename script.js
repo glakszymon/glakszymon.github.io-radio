@@ -308,17 +308,17 @@
         }
         
         .volume-field {
-            display: none;
-            position: absolute;
-            appearance: none;
-            height: 20px;
-            right: 100%;
-            top: 50%;
-            transform: translateY(-50%) rotate(180deg);
-            z-index: 5;
-            margin: 0;
-            border-radius: 2px;
-            background: #ffffff;
+          display: none;
+          position: absolute;
+          appearance: none;
+          height: 20px;
+          right: -3.1rem;
+          top: -4rem;
+          transform: translateY(-50%) rotate(270deg);
+          z-index: 5;
+          margin: 0;
+          border-radius: 2px;
+          background: #ffffff;
         }
         
         .volume-field::-webkit-slider-thumb {
@@ -378,6 +378,10 @@
           .audio-player {
             padding-top: 1rem;
             padding-bottom: 1rem;
+          }
+
+          .volume-field {
+            right: -2.1rem;
           }
       }
       </style>

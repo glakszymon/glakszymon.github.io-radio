@@ -13,11 +13,11 @@
     </head>
     <body>
         <div id="app">    
-            <div class="inBuild">
+            <!-- <div class="inBuild">
                 <img src="./images/warning.png" class="iconWarning">
                 <p class="error_text">Ta strona jest aktualnie remontowana. Przepraszamy za utrudnienia. Życzymy miłego słuchania.</p>
                 <img src="./images/warning.png" class="iconWarning">
-            </div>
+            </div> -->
             <nav id="navigation">
                 <div class="nav_logo">
                     <a href="#">
@@ -64,12 +64,12 @@
             <div class="container">
                 <div class="infoPlayer" id="player">
                     <!-- <img src="./images/girl.png" class="image_player"> -->
-                    <div class="playerTextInfo" v-for="w in aktualnaAudycja">
+                    <div class="playerTextInfo">
                         <p class="centerText">Na antenie</p>
                         <p class="centerText">Teraz gramy</p>
-                        <h3 class="nameAudycjaInfo">{{ w.title }}</h3>
-                        <h3 class="centerText" >{{ currentSong }}</h3>
-                        <p class="centerText">{{ w.creator }}</p>
+                        <!-- <h3 class="nameAudycjaInfo">{{ w.title }}</h3> -->
+                        <h3 class="centerText" data-shoutcast-value="songtitle"></h3>
+                        <!-- <p class="centerText">{{ w.creator }}</p> -->
                     </div>
                     
                 </div>
@@ -164,7 +164,7 @@
                     </div>
                     
                     <div v-for="n in showingWiadomosci" class="wpis">
-                        <!-- <img src="./images/20231218_133456.jpg" class="photoWpis"> -->
+                        <img src="./images/20231218_133456.jpg" class="photoWpis">
                         <div class="tekst">
                             <h2 class="title_post">{{ n.Title }}</h2>
                             <p>{{ n.Tresc }}</p>
@@ -205,6 +205,10 @@
                 </div>
             </footer>
         </div>
+
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+      <!-- <script src="jquery.shoutcast.easy.min.js?host=example.com&port=8000"></script> -->
+
     </body>
     <script>
         let app = Vue.createApp({
@@ -228,12 +232,13 @@
             },
             methods: {
                 updateRamowka(){
-                    // fetch('https://stasieradio.pl/cgi-bin/phpAplikacja/getWeekProgram.php?week='+this.actualWeekDay)
-                    //     .then(odp => odp.json())
-                    //     .then(data => {
-                    //         this.listItems = data;
-                    //     })
-                    //     .catch(err => console.log(err))
+                    fetch('https://stasieradio.pl/cgi-bin/phpAplikacja/getWeekProgram.php?week='+String(this.actualWeekDay))
+                        .then(odp => odp.json())
+                        .then(data => {
+                            console.log(data);
+                            this.listItems = data;
+                        })
+                        .catch(err => console.log(err))
 
                     switch(this.actualWeekDay) {
                     case 0:
@@ -282,10 +287,12 @@
                 },
 
                 updateSong() {
-                    // axios.get('http://live3.rcast.net:9000/currentsong?sid=1')
-                    //     .then(response => {
-                    //     this.currentSong = response.data
-                    // })
+                    $.SHOUTcast({
+                        host : 'stardust.wavestreamer.com',
+                        port : 8062
+                    }).stats(function(){
+                        $('#songtitle').text(this.get('songtitle'));
+                    });
                 },
 
                 nextWeekDay(){
@@ -305,47 +312,44 @@
                     this.updateRamowka();
                 },
 
-
-
-            },
-
-            mounted() {
-                // fetch("http://localhost/getPeople.php")
-                //     .then(response => response.json())
-                //     .then(data => {
-                //         this.people = data;
-                //     });
-                this.actualWeekDay = this.current.getDay();
-                
-                    
-                this.updateSong();
-                this.updateRamowka();
-
-                setInterval(() => {
-                    this.updateSong();
-
-                    fetch("http://localhost/getPeople.php")
-                        .then(res => res.json())
-                        .then(data => {
-                            this.people = data;
-                        })
-                        .catch(err => console.log(err))
-
-                    fetch("http://localhost/getInfo.php")
+                updateWiadomosci(){
+                    fetch("https://stasieradio.pl/cgi-bin/phpAplikacja/showInfo.php")
                         .then(response => response.json())
                         .then(data => {
                             this.allwiadomosci = data;
                             this.showingWiadomosci = this.allwiadomosci.slice(this.nextIndex, this.nextIndex + this.numberOfShowingInfo)
                         });
+                }
 
-                    fetch("http://localhost/getAktualna.php")
-                        .then(res => res.json())
-                        .then(data => {
-                            this.aktualnaAudycja = data;
-                        })
-                        .catch(err => console.log(err))
 
-                }, 5000)
+
+            },
+
+            mounted() {
+                fetch("https://stasieradio.pl/cgi-bin/phpAplikacja/people_import.php")
+                    .then(response => response.json())
+                    .then(data => {
+                        this.people = data;
+                    });
+                //this.actualWeekDay = this.current.getDay();
+                
+                this.updateRamowka();
+                this.updateWiadomosci();
+                    
+                // this.updateSong();
+
+                setInterval(() => {
+                    // this.updateSong();
+                    this.updateWiadomosci();
+
+                    // fetch("http://localhost/getAktualna.php")
+                    //     .then(res => res.json())
+                    //     .then(data => {
+                    //         this.aktualnaAudycja = data;
+                    //     })
+                    //     .catch(err => console.log(err))
+
+                }, 10000)
             }
         });
         
