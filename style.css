@@ -543,4 +543,8 @@ footer{
         top: 0rem;
         left: 5rem;
     }
+
+    .people{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
